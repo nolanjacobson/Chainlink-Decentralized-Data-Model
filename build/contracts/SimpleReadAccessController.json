@@ -1,0 +1,1029 @@
+{
+  "contractName": "SimpleReadAccessController",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "AddedAccess",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "CheckAccessDisabled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "CheckAccessEnabled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferRequested",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "RemovedAccess",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "addAccess",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "checkEnabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "disableAccessCheck",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "enableAccessCheck",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        }
+      ],
+      "name": "removeAccess",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_user",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_calldata",
+          "type": "bytes"
+        }
+      ],
+      "name": "hasAccess",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"AddedAccess\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"CheckAccessDisabled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"CheckAccessEnabled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"OwnershipTransferRequested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"RemovedAccess\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"addAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"checkEnabled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"disableAccessCheck\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"enableAccessCheck\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_calldata\",\"type\":\"bytes\"}],\"name\":\"hasAccess\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_user\",\"type\":\"address\"}],\"name\":\"removeAccess\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"SimpleReadAccessController is not suitable for access controlling writes since it grants any externally owned account access! See SimpleWriteAccessController for that.\",\"methods\":{\"acceptOwnership()\":{\"details\":\"Allows an ownership transfer to be completed by the recipient.\"},\"addAccess(address)\":{\"params\":{\"_user\":\"The address to add\"}},\"hasAccess(address,bytes)\":{\"params\":{\"_user\":\"The address to query\"}},\"removeAccess(address)\":{\"params\":{\"_user\":\"The address to remove\"}},\"transferOwnership(address)\":{\"details\":\"Allows an owner to begin transferring ownership to a new address, pending.\"}},\"title\":\"SimpleReadAccessController\"},\"userdoc\":{\"methods\":{\"addAccess(address)\":{\"notice\":\"Adds an address to the access list\"},\"disableAccessCheck()\":{\"notice\":\"makes the access check unenforced\"},\"enableAccessCheck()\":{\"notice\":\"makes the access check enforced\"},\"hasAccess(address,bytes)\":{\"notice\":\"Returns the access of an address\"},\"removeAccess(address)\":{\"notice\":\"Removes an address from the access list\"}},\"notice\":\"Gives access to: - any externally owned account (note that offchain actors can always read any contract storage regardless of onchain access control measures, so this does not weaken the access control while improving usability) - accounts explicitly added to an access list\"}},\"settings\":{\"compilationTarget\":{\"@chainlink/contracts/src/v0.6/SimpleReadAccessController.sol\":\"SimpleReadAccessController\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@chainlink/contracts/src/v0.6/Owned.sol\":{\"keccak256\":\"0xd791ecc6095e7f3b0a49f036f1fd9011873e5c7c04d2b28292d11e15c0967b75\",\"urls\":[\"bzz-raw://1cc68291e0dc79fb6a140a2f4e667392fe71d0e7814bad3b56ae47dd13f69ba7\",\"dweb:/ipfs/QmQFTFFBjaJsb7sivr25R4XfNKW84nDjZWSGMY7Cc8eqqC\"]},\"@chainlink/contracts/src/v0.6/SimpleReadAccessController.sol\":{\"keccak256\":\"0xac369a002088e3934f3bf74545ccc28d79b05b05fe2ac6f76c963b5707d8bfcb\",\"urls\":[\"bzz-raw://010491b2188a7dd11045993caf6c0c28529f36ca1fabf1f2a0fe22669b0fc5d4\",\"dweb:/ipfs/QmRyBFRsdFehSUbjqUZHvxgMLwWfL28w7H3sbQqcw86jWU\"]},\"@chainlink/contracts/src/v0.6/SimpleWriteAccessController.sol\":{\"keccak256\":\"0x4c5394385cd47efc170a5605f1e13fbcaddd8764f17b75195c18235d2dadf8b1\",\"urls\":[\"bzz-raw://767e097b31d368be8f522297aacd336d9afe130827d97cb944f6a3fbedbbda53\",\"dweb:/ipfs/QmWAWdsSWcdTndRme1GGfNsVzGEhSBSi3dFMUP7DjwNSTc\"]},\"@chainlink/contracts/src/v0.6/interfaces/AccessControllerInterface.sol\":{\"keccak256\":\"0x67b8142df434bec7c794762cccf6576c74b0d0f52bc24a17e05d31022010f267\",\"urls\":[\"bzz-raw://8e43ce1eefefdd7e2d9de3368384c6eb64bf98577b8e5958e9f092dcbfa0d680\",\"dweb:/ipfs/QmW3Nd3AUa146oC1UJJoy99nxGioHQCwE4D3pdy4deq9uR\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600080546001600160a01b031916331790556001805460ff60a01b1916600160a01b179055610713806100386000396000f3fe608060405234801561001057600080fd5b50600436106100935760003560e01c80638823da6c116100665780638823da6c1461017c5780638da5cb5b146101a2578063a118f249146101c6578063dc7f0124146101ec578063f2fde38b146101f457610093565b80630a756983146100985780636b14daf8146100a257806379ba50971461016c5780638038e4a114610174575b600080fd5b6100a061021a565b005b610158600480360360408110156100b857600080fd5b6001600160a01b0382351691908101906040810160208201356401000000008111156100e357600080fd5b8201836020820111156100f557600080fd5b8035906020019184600183028401116401000000008311171561011757600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506102bd945050505050565b604080519115158252519081900360200190f35b6100a06102e3565b6100a0610392565b6100a06004803603602081101561019257600080fd5b50356001600160a01b0316610439565b6101aa61050b565b604080516001600160a01b039092168252519081900360200190f35b6100a0600480360360208110156101dc57600080fd5b50356001600160a01b031661051a565b6101586105ed565b6100a06004803603602081101561020a57600080fd5b50356001600160a01b03166105fd565b6000546001600160a01b03163314610272576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b600154600160a01b900460ff16156102bb576001805460ff60a01b191690556040517f3be8a977a014527b50ae38adda80b56911c267328965c98ddc385d248f53963890600090a15b565b60006102c983836106a6565b806102dc57506001600160a01b03831632145b9392505050565b6001546001600160a01b0316331461033b576040805162461bcd60e51b815260206004820152601660248201527526bab9ba10313290383937b837b9b2b21037bbb732b960511b604482015290519081900360640190fd5b60008054336001600160a01b0319808316821784556001805490911690556040516001600160a01b0390921692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a350565b6000546001600160a01b031633146103ea576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b600154600160a01b900460ff166102bb576001805460ff60a01b1916600160a01b1790556040517faebf329500988c6488a0074e5a0a9ff304561fc5c6fc877aeb1d59c8282c348090600090a1565b6000546001600160a01b03163314610491576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b6001600160a01b03811660009081526002602052604090205460ff1615610508576001600160a01b038116600081815260026020908152604091829020805460ff19169055815192835290517f3d68a6fce901d20453d1a7aa06bf3950302a735948037deb182a8db66df2a0d19281900390910190a15b50565b6000546001600160a01b031681565b6000546001600160a01b03163314610572576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b6001600160a01b03811660009081526002602052604090205460ff16610508576001600160a01b038116600081815260026020908152604091829020805460ff19166001179055815192835290517f87286ad1f399c8e82bf0c4ef4fcdc570ea2e1e92176e5c848b6413545b885db49281900390910190a150565b600154600160a01b900460ff1681565b6000546001600160a01b03163314610655576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b600180546001600160a01b0319166001600160a01b0383811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b6001600160a01b03821660009081526002602052604081205460ff16806102dc575050600154600160a01b900460ff16159291505056fea26469706673582212202fa1145268c028853f20ab62f5b26fc35eaa128fedcddaa7d7b8f673a35b399364736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100935760003560e01c80638823da6c116100665780638823da6c1461017c5780638da5cb5b146101a2578063a118f249146101c6578063dc7f0124146101ec578063f2fde38b146101f457610093565b80630a756983146100985780636b14daf8146100a257806379ba50971461016c5780638038e4a114610174575b600080fd5b6100a061021a565b005b610158600480360360408110156100b857600080fd5b6001600160a01b0382351691908101906040810160208201356401000000008111156100e357600080fd5b8201836020820111156100f557600080fd5b8035906020019184600183028401116401000000008311171561011757600080fd5b91908080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920191909152509295506102bd945050505050565b604080519115158252519081900360200190f35b6100a06102e3565b6100a0610392565b6100a06004803603602081101561019257600080fd5b50356001600160a01b0316610439565b6101aa61050b565b604080516001600160a01b039092168252519081900360200190f35b6100a0600480360360208110156101dc57600080fd5b50356001600160a01b031661051a565b6101586105ed565b6100a06004803603602081101561020a57600080fd5b50356001600160a01b03166105fd565b6000546001600160a01b03163314610272576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b600154600160a01b900460ff16156102bb576001805460ff60a01b191690556040517f3be8a977a014527b50ae38adda80b56911c267328965c98ddc385d248f53963890600090a15b565b60006102c983836106a6565b806102dc57506001600160a01b03831632145b9392505050565b6001546001600160a01b0316331461033b576040805162461bcd60e51b815260206004820152601660248201527526bab9ba10313290383937b837b9b2b21037bbb732b960511b604482015290519081900360640190fd5b60008054336001600160a01b0319808316821784556001805490911690556040516001600160a01b0390921692909183917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a350565b6000546001600160a01b031633146103ea576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b600154600160a01b900460ff166102bb576001805460ff60a01b1916600160a01b1790556040517faebf329500988c6488a0074e5a0a9ff304561fc5c6fc877aeb1d59c8282c348090600090a1565b6000546001600160a01b03163314610491576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b6001600160a01b03811660009081526002602052604090205460ff1615610508576001600160a01b038116600081815260026020908152604091829020805460ff19169055815192835290517f3d68a6fce901d20453d1a7aa06bf3950302a735948037deb182a8db66df2a0d19281900390910190a15b50565b6000546001600160a01b031681565b6000546001600160a01b03163314610572576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b6001600160a01b03811660009081526002602052604090205460ff16610508576001600160a01b038116600081815260026020908152604091829020805460ff19166001179055815192835290517f87286ad1f399c8e82bf0c4ef4fcdc570ea2e1e92176e5c848b6413545b885db49281900390910190a150565b600154600160a01b900460ff1681565b6000546001600160a01b03163314610655576040805162461bcd60e51b815260206004820152601660248201527527b7363c9031b0b63630b1363290313c9037bbb732b960511b604482015290519081900360640190fd5b600180546001600160a01b0319166001600160a01b0383811691821790925560008054604051929316917fed8889f560326eb138920d842192f0eb3dd22b4f139c87a2c57538e05bae12789190a350565b6001600160a01b03821660009081526002602052604081205460ff16806102dc575050600154600160a01b900460ff16159291505056fea26469706673582212202fa1145268c028853f20ab62f5b26fc35eaa128fedcddaa7d7b8f673a35b399364736f6c63430006060033",
+  "immutableReferences": {},
+  "sourceMap": "627:381:17:-:0;;;438:5:12;:18;;-1:-1:-1;;;;;;438:18:12;446:10;438:18;;;;708:19:18;;-1:-1:-1;;;;708:19:18;-1:-1:-1;;;708:19:18;;;627:381:17;;;;;;",
+  "deployedSourceMap": "627:381:17:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;627:381:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1847:159:18;;;:::i;:::-;;796:209:17;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;;;;;796:209:17;;;;;;;;;;;;;;;27:11:-1;11:28;;8:2;;;52:1;49;42:12;8:2;796:209:17;;41:9:-1;34:4;18:14;14:25;11:40;8:2;;;64:1;61;54:12;8:2;796:209:17;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;796:209:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;796:209:17;;-1:-1:-1;796:209:17;;-1:-1:-1;;;;;796:209:17:i;:::-;;;;;;;;;;;;;;;;;;806:254:12;;;:::i;1627:157:18:-;;;:::i;1391:175::-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1391:175:18;-1:-1:-1;;;;;1391:175:18;;:::i;179:20:12:-;;;:::i;:::-;;;;-1:-1:-1;;;;;179:20:12;;;;;;;;;;;;;;1112:170:18;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1112:170:18;-1:-1:-1;;;;;1112:170:18;;:::i;464:24::-;;;:::i;567:150:12:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;567:150:12;-1:-1:-1;;;;;567:150:12;;:::i;1847:159:18:-;1194:5:12;;-1:-1:-1;;;;;1194:5:12;1180:10;:19;1172:54;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;;;;1918:12:18::1;::::0;-1:-1:-1;;;1918:12:18;::::1;;;1914:88;;;1940:12;:20:::0;;-1:-1:-1;;;;1940:20:18::1;::::0;;1974:21:::1;::::0;::::1;::::0;1955:5:::1;::::0;1974:21:::1;1914:88;1847:159::o:0;796:209:17:-;924:4;945:33;961:5;968:9;945:15;:33::i;:::-;:55;;;-1:-1:-1;;;;;;982:18:17;;991:9;982:18;945:55;938:62;796:209;-1:-1:-1;;;796:209:17:o;806:254:12:-;876:12;;-1:-1:-1;;;;;876:12:12;862:10;:26;854:61;;;;;-1:-1:-1;;;854:61:12;;;;;;;;;;;;-1:-1:-1;;;854:61:12;;;;;;;;;;;;;;;922:16;941:5;;960:10;-1:-1:-1;;;;;;952:18:12;;;;;;;-1:-1:-1;976:25:12;;;;;;;1013:42;;-1:-1:-1;;;;;941:5:12;;;;960:10;;941:5;;1013:42;;;806:254;:::o;1627:157:18:-;1194:5:12;;-1:-1:-1;;;;;1194:5:12;1180:10;:19;1172:54;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;;;;1698:12:18::1;::::0;-1:-1:-1;;;1698:12:18;::::1;;;1693:87;;1735:4;1720:19:::0;;-1:-1:-1;;;;1720:19:18::1;-1:-1:-1::0;;;1720:19:18::1;::::0;;1753:20:::1;::::0;::::1;::::0;1720:19;;1753:20:::1;1627:157::o:0;1391:175::-;1194:5:12;;-1:-1:-1;;;;;1194:5:12;1180:10;:19;1172:54;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;;;;-1:-1:-1;;;;;1469:17:18;::::1;;::::0;;;:10:::1;:17;::::0;;;;;::::1;;1465:97;;;-1:-1:-1::0;;;;;1496:17:18;::::1;1516:5;1496:17:::0;;;:10:::1;:17;::::0;;;;;;;;:25;;-1:-1:-1;;1496:25:18::1;::::0;;1535:20;;;;;;;::::1;::::0;;;;;;;;::::1;1465:97;1391:175:::0;:::o;179:20:12:-;;;-1:-1:-1;;;;;179:20:12;;:::o;1112:170:18:-;1194:5:12;;-1:-1:-1;;;;;1194:5:12;1180:10;:19;1172:54;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;;;;-1:-1:-1;;;;;1188:17:18;::::1;;::::0;;;:10:::1;:17;::::0;;;;;::::1;;1183:95;;-1:-1:-1::0;;;;;1215:17:18;::::1;;::::0;;;:10:::1;:17;::::0;;;;;;;;:24;;-1:-1:-1;;1215:24:18::1;1235:4;1215:24;::::0;;1253:18;;;;;;;::::1;::::0;;;;;;;;::::1;1112:170:::0;:::o;464:24::-;;;-1:-1:-1;;;464:24:18;;;;;:::o;567:150:12:-;1194:5;;-1:-1:-1;;;;;1194:5:12;1180:10;:19;1172:54;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;-1:-1:-1;;;1172:54:12;;;;;;;;;;;;;;;644:12:::1;:18:::0;;-1:-1:-1;;;;;;644:18:12::1;-1:-1:-1::0;;;;;644:18:12;;::::1;::::0;;::::1;::::0;;;-1:-1:-1;701:5:12;;674:38:::1;::::0;644:18;;701:5:::1;::::0;674:38:::1;::::0;-1:-1:-1;674:38:12::1;567:150:::0;:::o;833:178:18:-;-1:-1:-1;;;;;972:17:18;;951:4;972:17;;;:10;:17;;;;;;;;;:34;;-1:-1:-1;;994:12:18;;-1:-1:-1;;;994:12:18;;;;993:13;;833:178;-1:-1:-1;;833:178:18:o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.0;\n\nimport \"./SimpleWriteAccessController.sol\";\n\n/**\n * @title SimpleReadAccessController\n * @notice Gives access to:\n * - any externally owned account (note that offchain actors can always read\n * any contract storage regardless of onchain access control measures, so this\n * does not weaken the access control while improving usability)\n * - accounts explicitly added to an access list\n * @dev SimpleReadAccessController is not suitable for access controlling writes\n * since it grants any externally owned account access! See\n * SimpleWriteAccessController for that.\n */\ncontract SimpleReadAccessController is SimpleWriteAccessController {\n\n  /**\n   * @notice Returns the access of an address\n   * @param _user The address to query\n   */\n  function hasAccess(\n    address _user,\n    bytes memory _calldata\n  )\n    public\n    view\n    virtual\n    override\n    returns (bool)\n  {\n    return super.hasAccess(_user, _calldata) || _user == tx.origin;\n  }\n\n}\n",
+  "sourcePath": "@chainlink/contracts/src/v0.6/SimpleReadAccessController.sol",
+  "ast": {
+    "absolutePath": "@chainlink/contracts/src/v0.6/SimpleReadAccessController.sol",
+    "exportedSymbols": {
+      "SimpleReadAccessController": [
+        5696
+      ]
+    },
+    "id": 5697,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5668,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:17"
+      },
+      {
+        "absolutePath": "@chainlink/contracts/src/v0.6/SimpleWriteAccessController.sol",
+        "file": "./SimpleWriteAccessController.sol",
+        "id": 5669,
+        "nodeType": "ImportDirective",
+        "scope": 5697,
+        "sourceUnit": 5851,
+        "src": "57:43:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5671,
+              "name": "SimpleWriteAccessController",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5850,
+              "src": "666:27:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SimpleWriteAccessController_$5850",
+                "typeString": "contract SimpleWriteAccessController"
+              }
+            },
+            "id": 5672,
+            "nodeType": "InheritanceSpecifier",
+            "src": "666:27:17"
+          }
+        ],
+        "contractDependencies": [
+          5009,
+          5850,
+          5862
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5670,
+          "nodeType": "StructuredDocumentation",
+          "src": "102:524:17",
+          "text": "@title SimpleReadAccessController\n@notice Gives access to:\n- any externally owned account (note that offchain actors can always read\nany contract storage regardless of onchain access control measures, so this\ndoes not weaken the access control while improving usability)\n- accounts explicitly added to an access list\n@dev SimpleReadAccessController is not suitable for access controlling writes\nsince it grants any externally owned account access! See\nSimpleWriteAccessController for that."
+        },
+        "fullyImplemented": true,
+        "id": 5696,
+        "linearizedBaseContracts": [
+          5696,
+          5850,
+          5009,
+          5862
+        ],
+        "name": "SimpleReadAccessController",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              5750
+            ],
+            "body": {
+              "id": 5694,
+              "nodeType": "Block",
+              "src": "932:73:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 5692,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 5685,
+                          "name": "_user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5675,
+                          "src": "961:5:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 5686,
+                          "name": "_calldata",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5677,
+                          "src": "968:9:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5683,
+                          "name": "super",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -25,
+                          "src": "945:5:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_super$_SimpleReadAccessController_$5696",
+                            "typeString": "contract super SimpleReadAccessController"
+                          }
+                        },
+                        "id": 5684,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasAccess",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 5750,
+                        "src": "945:15:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes_memory_ptr_$returns$_t_bool_$",
+                          "typeString": "function (address,bytes memory) view returns (bool)"
+                        }
+                      },
+                      "id": 5687,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "945:33:17",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "||",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "id": 5691,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 5688,
+                        "name": "_user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5675,
+                        "src": "982:5:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5689,
+                          "name": "tx",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -26,
+                          "src": "991:2:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_transaction",
+                            "typeString": "tx"
+                          }
+                        },
+                        "id": 5690,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "origin",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "991:9:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "src": "982:18:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "945:55:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 5682,
+                  "id": 5693,
+                  "nodeType": "Return",
+                  "src": "938:62:17"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5673,
+              "nodeType": "StructuredDocumentation",
+              "src": "699:94:17",
+              "text": "@notice Returns the access of an address\n@param _user The address to query"
+            },
+            "functionSelector": "6b14daf8",
+            "id": 5695,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hasAccess",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5679,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "902:8:17"
+            },
+            "parameters": {
+              "id": 5678,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5675,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5695,
+                  "src": "820:13:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5674,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "820:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5677,
+                  "mutability": "mutable",
+                  "name": "_calldata",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5695,
+                  "src": "839:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 5676,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "814:51:17"
+            },
+            "returnParameters": {
+              "id": 5682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5681,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5695,
+                  "src": "924:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5680,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "924:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "923:6:17"
+            },
+            "scope": 5696,
+            "src": "796:209:17",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5697,
+        "src": "627:381:17"
+      }
+    ],
+    "src": "32:977:17"
+  },
+  "legacyAST": {
+    "absolutePath": "@chainlink/contracts/src/v0.6/SimpleReadAccessController.sol",
+    "exportedSymbols": {
+      "SimpleReadAccessController": [
+        5696
+      ]
+    },
+    "id": 5697,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5668,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:17"
+      },
+      {
+        "absolutePath": "@chainlink/contracts/src/v0.6/SimpleWriteAccessController.sol",
+        "file": "./SimpleWriteAccessController.sol",
+        "id": 5669,
+        "nodeType": "ImportDirective",
+        "scope": 5697,
+        "sourceUnit": 5851,
+        "src": "57:43:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5671,
+              "name": "SimpleWriteAccessController",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5850,
+              "src": "666:27:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_SimpleWriteAccessController_$5850",
+                "typeString": "contract SimpleWriteAccessController"
+              }
+            },
+            "id": 5672,
+            "nodeType": "InheritanceSpecifier",
+            "src": "666:27:17"
+          }
+        ],
+        "contractDependencies": [
+          5009,
+          5850,
+          5862
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 5670,
+          "nodeType": "StructuredDocumentation",
+          "src": "102:524:17",
+          "text": "@title SimpleReadAccessController\n@notice Gives access to:\n- any externally owned account (note that offchain actors can always read\nany contract storage regardless of onchain access control measures, so this\ndoes not weaken the access control while improving usability)\n- accounts explicitly added to an access list\n@dev SimpleReadAccessController is not suitable for access controlling writes\nsince it grants any externally owned account access! See\nSimpleWriteAccessController for that."
+        },
+        "fullyImplemented": true,
+        "id": 5696,
+        "linearizedBaseContracts": [
+          5696,
+          5850,
+          5009,
+          5862
+        ],
+        "name": "SimpleReadAccessController",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "baseFunctions": [
+              5750
+            ],
+            "body": {
+              "id": 5694,
+              "nodeType": "Block",
+              "src": "932:73:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 5692,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 5685,
+                          "name": "_user",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5675,
+                          "src": "961:5:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 5686,
+                          "name": "_calldata",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 5677,
+                          "src": "968:9:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5683,
+                          "name": "super",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -25,
+                          "src": "945:5:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_super$_SimpleReadAccessController_$5696",
+                            "typeString": "contract super SimpleReadAccessController"
+                          }
+                        },
+                        "id": 5684,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasAccess",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 5750,
+                        "src": "945:15:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes_memory_ptr_$returns$_t_bool_$",
+                          "typeString": "function (address,bytes memory) view returns (bool)"
+                        }
+                      },
+                      "id": 5687,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "945:33:17",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "||",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "id": 5691,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "id": 5688,
+                        "name": "_user",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5675,
+                        "src": "982:5:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 5689,
+                          "name": "tx",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -26,
+                          "src": "991:2:17",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_transaction",
+                            "typeString": "tx"
+                          }
+                        },
+                        "id": 5690,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "origin",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "991:9:17",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "src": "982:18:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "945:55:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 5682,
+                  "id": 5693,
+                  "nodeType": "Return",
+                  "src": "938:62:17"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 5673,
+              "nodeType": "StructuredDocumentation",
+              "src": "699:94:17",
+              "text": "@notice Returns the access of an address\n@param _user The address to query"
+            },
+            "functionSelector": "6b14daf8",
+            "id": 5695,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hasAccess",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 5679,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "902:8:17"
+            },
+            "parameters": {
+              "id": 5678,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5675,
+                  "mutability": "mutable",
+                  "name": "_user",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5695,
+                  "src": "820:13:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5674,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "820:7:17",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5677,
+                  "mutability": "mutable",
+                  "name": "_calldata",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5695,
+                  "src": "839:22:17",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 5676,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "839:5:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "814:51:17"
+            },
+            "returnParameters": {
+              "id": 5682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5681,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5695,
+                  "src": "924:4:17",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5680,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "924:4:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "923:6:17"
+            },
+            "scope": 5696,
+            "src": "796:209:17",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5697,
+        "src": "627:381:17"
+      }
+    ],
+    "src": "32:977:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2021-02-11T20:51:04.550Z",
+  "devdoc": {
+    "details": "SimpleReadAccessController is not suitable for access controlling writes since it grants any externally owned account access! See SimpleWriteAccessController for that.",
+    "methods": {
+      "acceptOwnership()": {
+        "details": "Allows an ownership transfer to be completed by the recipient."
+      },
+      "addAccess(address)": {
+        "params": {
+          "_user": "The address to add"
+        }
+      },
+      "hasAccess(address,bytes)": {
+        "params": {
+          "_user": "The address to query"
+        }
+      },
+      "removeAccess(address)": {
+        "params": {
+          "_user": "The address to remove"
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Allows an owner to begin transferring ownership to a new address, pending."
+      }
+    },
+    "title": "SimpleReadAccessController"
+  },
+  "userdoc": {
+    "methods": {
+      "addAccess(address)": {
+        "notice": "Adds an address to the access list"
+      },
+      "disableAccessCheck()": {
+        "notice": "makes the access check unenforced"
+      },
+      "enableAccessCheck()": {
+        "notice": "makes the access check enforced"
+      },
+      "hasAccess(address,bytes)": {
+        "notice": "Returns the access of an address"
+      },
+      "removeAccess(address)": {
+        "notice": "Removes an address from the access list"
+      }
+    },
+    "notice": "Gives access to: - any externally owned account (note that offchain actors can always read any contract storage regardless of onchain access control measures, so this does not weaken the access control while improving usability) - accounts explicitly added to an access list"
+  }
+}
